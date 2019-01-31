@@ -71,9 +71,15 @@ public class SaveLoadMenu : MonoBehaviour {
 		for (int i = 0; i < listContent.childCount; i++) {
 			Destroy(listContent.GetChild(i).gameObject);
 		}
-		string[] paths =
-			Directory.GetFiles(Application.persistentDataPath, "*.map");
-		Array.Sort(paths);
+#if UNITY_IOS || UNITY_ANDROID
+        string[] paths =
+        	Directory.GetFiles(Application.persistentDataPath, "*.map");
+#else
+        string[] paths =
+        Directory.GetFiles(Path.Combine(Application.dataPath,"maps"), "*.map");
+#endif
+
+        Array.Sort(paths);
 		for (int i = 0; i < paths.Length; i++) {
 			SaveLoadItem item = Instantiate(itemPrefab);
 			item.menu = this;
@@ -87,8 +93,12 @@ public class SaveLoadMenu : MonoBehaviour {
 		if (mapName.Length == 0) {
 			return null;
 		}
-		return Path.Combine(Application.persistentDataPath, mapName + ".map");
-	}
+#if UNITY_IOS || UNITY_ANDROID
+        return Path.Combine(Application.persistentDataPath, mapName + ".map");
+#else
+        return Path.Combine(Path.Combine(Application.dataPath, "maps"), mapName + ".map");
+#endif
+    }
 
 	void Save (string path) {
 		using (

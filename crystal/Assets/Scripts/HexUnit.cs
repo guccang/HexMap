@@ -6,7 +6,7 @@ using System.IO;
 public class HexUnit : MonoBehaviour {
 
 	const float rotationSpeed = 180f;
-	public float travelSpeed = 2f;
+	public float travelSpeed ;
     const int speed = 5;
 
 	public static HexUnit unitPrefab;
@@ -52,6 +52,7 @@ public class HexUnit : MonoBehaviour {
     public void Start()
     {
         animator = GetComponent<Animator>();
+        travelSpeed = 2.0f;
     }
 
 	public void ValidateLocation () {
@@ -83,7 +84,8 @@ public class HexUnit : MonoBehaviour {
 				transform.localPosition = Bezier.GetPoint(a, b, c, t);
 				Vector3 d = Bezier.GetDerivative(a, b, c, t);
 				d.y = 0f;
-				transform.localRotation = Quaternion.LookRotation(d);
+                if(d.magnitude > 0)
+				    transform.localRotation = Quaternion.LookRotation(d);
 				yield return null;
 			}
 			t -= 1f;
