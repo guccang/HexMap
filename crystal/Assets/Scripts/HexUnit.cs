@@ -6,10 +6,11 @@ using System.IO;
 public class HexUnit : MonoBehaviour {
 
 	const float rotationSpeed = 180f;
-	const float travelSpeed = 4f;
+	public float travelSpeed = 2f;
     const int speed = 5;
 
 	public static HexUnit unitPrefab;
+    private Animator animator;
     public int Speed
     {
         get
@@ -47,6 +48,11 @@ public class HexUnit : MonoBehaviour {
 	float orientation;
 
 	List<HexCell> pathToTravel;
+
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
 	public void ValidateLocation () {
 		transform.localPosition = location.Position;
