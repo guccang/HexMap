@@ -52,7 +52,8 @@ public class HexUnit : MonoBehaviour {
     public void Start()
     {
         animator = GetComponent<Animator>();
-        travelSpeed = 2.0f;
+		animator = GetComponentInChildren<Animator>();
+        travelSpeed = 1.0f;
     }
 
 	public void ValidateLocation () {
@@ -106,6 +107,7 @@ public class HexUnit : MonoBehaviour {
 		orientation = transform.localRotation.eulerAngles.y;
 		ListPool<HexCell>.Add(pathToTravel);
 		pathToTravel = null;
+		StopMove();
 	}
 
 	IEnumerator LookAt (Vector3 point) {
@@ -151,6 +153,21 @@ public class HexUnit : MonoBehaviour {
 		if (location) {
 			transform.localPosition = location.Position;
 		}
+	}
+
+	enum AnimationActionState
+	{
+		stand =0,
+		walk = 1,
+	}
+	public void Move()
+	{
+		animator.SetInteger("state",(int)AnimationActionState.walk);
+	}
+
+	private void StopMove()
+	{
+		animator.SetInteger("state",(int)AnimationActionState.stand);
 	}
 
 //	void OnDrawGizmos () {

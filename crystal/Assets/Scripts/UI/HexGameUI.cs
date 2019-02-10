@@ -22,6 +22,7 @@ public class HexGameUI : MonoBehaviour {
 			}
 			else if (selectedUnit) {
 				if (Input.GetMouseButtonDown(1)) {
+				    selectedUnit.Move();
 					DoMove();
 				}
 				else {

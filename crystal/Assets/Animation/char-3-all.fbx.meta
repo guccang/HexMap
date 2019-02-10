@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 8c7ef26e30e764fdb84a94fb7e5afde5
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature.001
+    100002: //RootNode
+    100004: Chest
+    100006: Cube.001
+    100008: Finger.L
+    100010: Finger.L_end
+    100012: Finger.L_end_end
+    100014: Finger.R
+    100016: Finger.R_end
+    100018: Finger.R_end_end
+    100020: Foot.L
+    100022: Foot.R
+    100024: Hand.L
+    100026: Hand.R
+    100028: Head
+    100030: Head_end
+    100032: Head_end_end
+    100034: Lower_Arm.L
+    100036: Lower_Arm.R
+    100038: Lower_Leg.L
+    100040: Lower_Leg.R
+    100042: Neck
+    100044: Thumb01.L
+    100046: Thumb01.R
+    100048: Thumb02.L
+    100050: Thumb02.L_end
+    100052: Thumb02.L_end_end
+    100054: Thumb02.R
+    100056: Thumb02.R_end
+    100058: Thumb02.R_end_end
+    100060: Toes.L
+    100062: Toes.L_end
+    100064: Toes.L_end_end
+    100066: Toes.R
+    100068: Toes.R_end
+    100070: Toes.R_end_end
+    100072: Torso
+    100074: Upper_Arm.L
+    100076: Upper_Arm.R
+    100078: Upper_Leg.L
+    100080: Upper_Leg.R
+    400000: Armature.001
+    400002: //RootNode
+    400004: Chest
+    400006: Cube.001
+    400008: Finger.L
+    400010: Finger.L_end
+    400012: Finger.L_end_end
+    400014: Finger.R
+    400016: Finger.R_end
+    400018: Finger.R_end_end
+    400020: Foot.L
+    400022: Foot.R
+    400024: Hand.L
+    400026: Hand.R
+    400028: Head
+    400030: Head_end
+    400032: Head_end_end
+    400034: Lower_Arm.L
+    400036: Lower_Arm.R
+    400038: Lower_Leg.L
+    400040: Lower_Leg.R
+    400042: Neck
+    400044: Thumb01.L
+    400046: Thumb01.R
+    400048: Thumb02.L
+    400050: Thumb02.L_end
+    400052: Thumb02.L_end_end
+    400054: Thumb02.R
+    400056: Thumb02.R_end
+    400058: Thumb02.R_end_end
+    400060: Toes.L
+    400062: Toes.L_end
+    400064: Toes.L_end_end
+    400066: Toes.R
+    400068: Toes.R_end
+    400070: Toes.R_end_end
+    400072: Torso
+    400074: Upper_Arm.L
+    400076: Upper_Arm.R
+    400078: Upper_Leg.L
+    400080: Upper_Leg.R
+    2100000: No Name
+    4300000: Cube.001
+    7400000: Armature.001|stand
+    7400002: Armature.001|Walk
+    7400004: Armature.001|Walk_Blocking
+    9500000: //RootNode
+    13700000: Cube.001
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: bc19731903b9a974bba3710539618799, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature.001|stand
+      takeName: Armature.001|stand
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.001|Walk
+      takeName: Armature.001|Walk
+      firstFrame: 0
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

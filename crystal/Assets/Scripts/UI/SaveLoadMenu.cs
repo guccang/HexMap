@@ -27,9 +27,10 @@ public class SaveLoadMenu : MonoBehaviour {
 			menuLabel.text = "Load Map";
 			actionButtonLabel.text = "Load";
 		}
-		FillList();
+		string firstFile = FillList();
 		gameObject.SetActive(true);
 		HexMapCamera.Locked = true;
+		SelectItem(firstFile);
 	}
 
 	public void Close () {
@@ -67,7 +68,7 @@ public class SaveLoadMenu : MonoBehaviour {
 		FillList();
 	}
 
-	void FillList () {
+	string FillList () {
 		for (int i = 0; i < listContent.childCount; i++) {
 			Destroy(listContent.GetChild(i).gameObject);
 		}
@@ -78,14 +79,17 @@ public class SaveLoadMenu : MonoBehaviour {
         string[] paths =
         Directory.GetFiles(Path.Combine(Application.dataPath,"maps"), "*.map");
 #endif
-
         Array.Sort(paths);
+		string firstFile = "";
 		for (int i = 0; i < paths.Length; i++) {
 			SaveLoadItem item = Instantiate(itemPrefab);
 			item.menu = this;
 			item.MapName = Path.GetFileNameWithoutExtension(paths[i]);
+			if(string.IsNullOrEmpty(firstFile))
+			 	firstFile = item.MapName;
 			item.transform.SetParent(listContent, false);
 		}
+		return firstFile;
 	}
 
 	string GetSelectedPath () {
