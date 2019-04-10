@@ -3,44 +3,54 @@ using UnityEngine.EventSystems;
 
 public class HexGameUI : MonoBehaviour {
 
+	private static HexCell currentCell;
+	private static HexUnit selectedUnit;
 	public HexGrid grid;
 
-	HexCell currentCell;
-
-	HexUnit selectedUnit;
-
+    /// //////////////////////////////////////////
+    public static void OnStopMove()
+    {
+        selectedUnit = null;
+        currentCell = null;
+    }
 	public void SetEditMode (bool toggle) {
 		enabled = !toggle;
 		grid.ShowUI(!toggle);
 		grid.ClearPath();
 	}
 
-	void Update () {
+
+    /// //////////////////////////////////////////
+    private void Update () {
 		if (!EventSystem.current.IsPointerOverGameObject()) {
-			if (Input.GetMouseButtonDown(0)) {
+			if (Input.GetMouseButtonDown(0) && null == selectedUnit) {
 				DoSelection();
 			}
-			else if (selectedUnit) {
-				if (Input.GetMouseButtonDown(1)) {
-				    selectedUnit.Move();
+			else if (selectedUnit && selectedUnit.State == HexUnit.AnimationActionState.stand) {
+				if (Input.GetMouseButtonDown(0)) {
 					DoMove();
 				}
 				else {
 					DoPathfinding(selectedUnit.Speed);
 				}
 			}
-		}
+            if (Input.GetMouseButtonDown(1))
+            {
+                selectedUnit = null;
+                currentCell = null;
+                grid.ClearPath();
+            }
+        }
 	}
-
-	void DoSelection () {
+	private void DoSelection () {
 		grid.ClearPath();
 		UpdateCurrentCell();
 		if (currentCell) {
 			selectedUnit = currentCell.Unit;
+            currentCell.EnableHighlight(Color.blue);
 		}
 	}
-
-	void DoPathfinding (int speed=24) {
+	private void DoPathfinding (int speed=24) {
 		if (UpdateCurrentCell()) {
 			if (currentCell && selectedUnit.IsValidDestination(currentCell)) {
 				grid.FindPath(selectedUnit.Location, currentCell, speed);
@@ -50,16 +60,15 @@ public class HexGameUI : MonoBehaviour {
 			}
 		}
 	}
-
-	void DoMove () {
+	private void DoMove () {
 		if (grid.HasPath) {
-//			selectedUnit.Location = currentCell;
-			selectedUnit.Travel(grid.GetPath());
+            //selectedUnit.Location = currentCell;
+            selectedUnit.Move();
+            selectedUnit.Travel(grid.GetPath());
 			grid.ClearPath();
 		}
 	}
-
-	bool UpdateCurrentCell () {
+	private bool UpdateCurrentCell () {
 		HexCell cell =
 			grid.GetCell(Camera.main.ScreenPointToRay(Input.mousePosition));
 		if (cell != currentCell) {

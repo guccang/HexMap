@@ -45,9 +45,10 @@ public class HexMapCamera : MonoBehaviour {
 			AdjustZoom(zoomDelta);
 		}
 
-		float rotationDelta = Input.GetAxis("Rotation");
+        float h = Input.GetAxis("Mouse X");
+        float rotationDelta = Input.GetAxis("Rotation");
 		if (rotationDelta != 0f) {
-			AdjustRotation(rotationDelta);
+			AdjustRotation(h);
 		}
 
 		float xDelta = Input.GetAxis("Horizontal");
