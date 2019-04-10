@@ -24,10 +24,9 @@ git remote add  origin git@github.com:guccang/HexMap.git
 
 
 ## git config
-
 git --global user.name ""
 git --global user.email ""
-配置文件名称.gitconfig
+全局配置文件名称.gitconfig
 ```
 [user]
         name = guccang@126.com
@@ -37,8 +36,9 @@ git --global user.email ""
         excludesfile = C:/Users/.gitignore
 ```
 
-多个git库如何配置config 文件. 路径 ~/.ssh下
+* 多个git库如何配置config 文件. 路径 ~/.ssh下
 ~/.ssh/config
+
 ```
 # github
 Host github.com
